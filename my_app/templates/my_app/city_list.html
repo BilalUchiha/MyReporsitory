@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Avilable cities</h1>
+{% for city in object_list %}
+<li>{{city}}</li>
+{% endfor %}
+{% endblock %}
