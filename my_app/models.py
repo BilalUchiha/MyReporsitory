@@ -9,9 +9,18 @@ class Customer(models.Model):
     blance = models.IntegerField(db_column='Blance', blank=True, null=True)  # Field name made lowercase.
     phone = models.CharField(max_length=13, blank=True, null=True)
 
+    
+
+    def __str__(self):
+        return self.customername
+    
+        
+
     class Meta:
         managed = False
         db_table = 'customer'
+        ordering = ['address']
+
 
 class City(models.Model):
     city_id = models.IntegerField(db_column='City id', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
@@ -19,4 +28,5 @@ class City(models.Model):
 
     def __str__(self):
         return self.cityname
+
 
